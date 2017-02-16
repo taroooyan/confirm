@@ -9,7 +9,9 @@ import (
 // input data expect yes or no
 // when yes, return true
 // when no, return false
-func AskConfirm() bool {
+func AskConfirm(message string) bool {
+	fmt.Println(message)
+
 	var res string
 	_, err := fmt.Scanln(&res)
 	if err != nil {
@@ -24,7 +26,7 @@ func AskConfirm() bool {
 		return false
 	} else {
 		fmt.Println("Please type yes or no and then press enter:")
-		return AskConfirm()
+		return AskConfirm(message)
 	}
 }
 
